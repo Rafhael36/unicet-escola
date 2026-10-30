@@ -1,5 +1,6 @@
 const express = require('express');
 const EstudanteRoutes = require('./src/routes/EstudanteRoutes');
+const cursoRoutes = require('./src/routes/cursoRoutes');
 
 const app = express();
 const PORT = 3000;
@@ -7,7 +8,8 @@ const PORT = 3000;
 app.use(express.json ());
 
 // Registra as rotas de aplicação
-app.use('/', EstudanteRoutes);
+app.use('/estudantes', EstudanteRoutes);
+app.use('/cursos', cursoRoutes);
 
 app.listen(PORT, () =>{
     console.log(`Servidor rodando em http://localhost:${PORT}`);
